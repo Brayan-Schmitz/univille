@@ -1,0 +1,1 @@
+print("chunky" == "bacon" and (not (3 == 4 or 3 == 3)))

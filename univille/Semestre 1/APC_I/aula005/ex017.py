@@ -1,0 +1,1 @@
+print(not ("testing" == "testing" and "Zed" == "Cool Guy"))
