@@ -19,3 +19,18 @@ p::first-letter {
 p:hover {
     text-decoration: none;
 }
+
+.primary-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.primary-list img {
+    display: block;
+    margin: 0 auto;
+}
+
+.primary-list li {
+    margin-bottom: 20px;
+}
