@@ -4,9 +4,9 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 sort = random.choice(numbers)
 
 while True:
-    first_player = int(input("Jogador 1> "))
-    second_player = int(input("Jogador 2> "))
-    third_player = int(input("Jogador 3> "))
+    first_player = int(input("Jogador 1: "))
+    second_player = int(input("Jogador 2: "))
+    third_player = int(input("Jogador 3: "))
 
     if first_player == sort or second_player == sort or third_player == sort:
         print(f"A escolha do computador foi {sort}, você acertou!")
