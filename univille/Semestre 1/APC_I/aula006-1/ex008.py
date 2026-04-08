@@ -6,12 +6,15 @@
 #101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
 
 print("Digite um número inteiro menor que 1000")
-num = int(input("Digite o número inteiro: "))
+num = input("Digite o número inteiro: ")
 
-if num > 1000:
+if len(num) >= 4:
     print("Número Inválido!")
     exit()
 
-n = str(num)
-
-print(f"Seu número {num} \nPossui {n[0]} centenas, {n[1]} dezenas e {n[2]} unidades.")
+if len(num) == 3:
+    print(f"Seu número {num} \nPossui {num[0]} centenas, {num[1]} dezenas e {num[2]} unidades.")
+elif len(num) == 2:
+    print(f"Seu número {num} \nPossui {num[0]} dezenas e {num[1]} unidades.")
+elif len(num) == 1:
+    print(f"Seu número {num} \nPossui {num[0]} unidades.")
