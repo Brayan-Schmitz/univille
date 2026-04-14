@@ -15,7 +15,7 @@
 #contendo as informações da compra: tipo e quantidade de carne, preço total,
 #tipo de pagamento, valor do desconto e valor a pagar
 
-pprint("As opções de corte da carne são: FD: Filé Duplo")
+print("As opções de corte da carne são: FD: Filé Duplo")
 print("As opções de corte da carne são: AL: Alcatra")
 print("As opções de corte da carne são: PI: Picanha")
 
