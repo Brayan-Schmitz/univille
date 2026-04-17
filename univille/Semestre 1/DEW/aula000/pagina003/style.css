@@ -141,3 +141,14 @@ h1 {
     color: #f87171;
     transform: scale(1.1);
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 15px 40px;
+    background-color: #0f172a;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
