@@ -6,7 +6,9 @@
 #101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
 
 print("Digite um número inteiro menor que 1000")
-num = input("Digite o número inteiro: ")
+num = int(input("Digite o número inteiro: "))
+
+num = str
 
 if len(num) >= 4:
     print("Número Inválido!")
