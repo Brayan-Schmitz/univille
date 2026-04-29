@@ -14,7 +14,7 @@ nota2 = float(input("Digite a segunda nota do aluno: "))
 
 media = ((nota1 + nota2) / 2)
 
-if media > 10:
+if media > 10 or nota1 > 10 or nota2 > 10:
     print("Valor Inválido!")
     exit()
 
