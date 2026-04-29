@@ -18,6 +18,10 @@ if media > 10 or nota1 > 10 or nota2 > 10:
     print("Valor Inválido!")
     exit()
 
+if media < 0 or nota1 < 0 or nota2 <0:
+    print("Valor Inválido!")
+    exit()
+
 print(f"O aluno teve a primeira nota: {nota1}")
 print(f"O aluno teve a segunda nota: {nota2}")
 print(f"A média do aluno é: {media}")
