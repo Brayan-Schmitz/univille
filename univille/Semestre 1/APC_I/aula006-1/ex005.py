@@ -2,7 +2,7 @@
 #semana. (1-Domingo, 2- Segunda, etc.), se digitar outro valor deve aparecer
 #valor inválido
 
-print("Os dias da semana correspodente (1-Domingo, 2- Segunda, etc.) ")
+print("Os dias da semana correspodente (1-Domingo, 2- Segunda, etc...) ")
 week = input("Digite o dia da semana: ").strip()
 
 if week in ("1", "2", "3", "4", "5", "6", "7"):
