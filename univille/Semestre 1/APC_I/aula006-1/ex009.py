@@ -23,6 +23,19 @@ elif media > 10:
     print("Média é Inválida!!")
     exit()
 
+if nota1 < 0:
+    print("Nota 1 é Inválida!!")
+    exit()
+elif nota2 < 0:
+    print("Nota 2 é Inválida!!")
+    exit()
+elif nota3 < 0:
+    print("Nota 3 é Inválida!!")
+    exit()
+elif media < 0:
+    print("Média é Inválida!!")
+    exit()
+
 if 0 <= media <= 10:
     if media < 7:
         print(f"A média é: {media}")
