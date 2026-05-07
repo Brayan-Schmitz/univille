@@ -1,3 +1,7 @@
+'''Crie um programa no qual o usuário informe a idade de um número indeterminado de
+alunos. Para encerrar a leitura dos dados, o usuário deve informar uma idade negativa.
+No final, o programa deve mostrar a média aritmética entre a maior e a menor idade'''
+
 idades = []
 
 idade = int(input("Informe a idade do aluno: "))
