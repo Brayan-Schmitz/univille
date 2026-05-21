@@ -1,3 +1,7 @@
+'''Desenvolva um programa que leia um conjunto indeterminado de temperaturas
+em Celsius e informe a média delas. A leitura deve ser encerrada ao ser enviado o
+valor -273°C.'''
+
 print("Para sair digite a temperatura -273°C")
 temp = float(input("Digite a temperatura em Celsius: "))
 
