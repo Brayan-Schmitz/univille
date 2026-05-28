@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS — DevLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+
+<body class="page-css">
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../Index.html" class="logo" aria-label="DevLearn Home">
+        <span class="logo-bracket">&lt;</span>DevLearn<span class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="../Index.html" class="nav-link">Home</a></li>
+          <li><a href="sobreHtml.html" class="nav-link">HTML</a></li>
+          <li><a href="sobreCss.html" class="nav-link active">CSS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- Page hero -->
+    <section class="page-hero page-hero--css" aria-labelledby="page-title">
+      <div class="container">
+        <p class="hero-eyebrow">Tecnologia #2</p>
+        <h1 id="page-title" tabindex="-1"><span class="c-brace">&#123;</span> CSS <span class="c-brace">&#125;</span></h1>
+        <p class="page-hero-desc">
+          Cascading Style Sheets — a linguagem que transforma estrutura em design, cor e movimento.
+        </p>
+      </div>
+    </section>
+
+    <!-- O que é CSS -->
+    <section class="content-section" aria-labelledby="o-que-e-css" tabindex="0">
+      <div class="container content-grid">
+        <div class="content-text">
+          <h2 id="o-que-e-css">O que é CSS?</h2>
+          <p>
+            CSS é a linguagem usada para <strong>estilizar</strong> documentos HTML. Com ela você controla cores,
+            fontes, espaçamentos, layouts e até animações — tudo que torna uma página visualmente agradável.
+          </p>
+          <p>
+            O nome <em>Cascading</em> (cascata) vem do modo como regras são aplicadas: estilos se sobrepõem
+            em uma ordem de prioridade, permitindo herança e especificidade.
+          </p>
+        </div>
+        <aside class="content-aside" aria-label="Curiosidade sobre CSS">
+          <div class="aside-box aside-box--css">            
+            <p><strong>Você sabia?</strong> CSS foi proposto por Håkon Wium Lie em 1994. O CSS3 trouxe módulos
+              independentes como Flexbox, Grid, animações e variáveis nativas.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Anatomia de uma regra CSS -->
+    <section class="content-section content-section--alt" aria-labelledby="anatomia-css" tabindex="0">
+      <div class="container">
+        <h2 id="anatomia-css">Anatomia de uma Regra CSS</h2>
+        <p class="section-intro">Toda regra CSS é composta por seletor, propriedade e valor:</p>
+
+        <div class="anatomy-diagram anatomy-diagram--css" aria-label="Diagrama de anatomia de uma regra CSS">
+          <div class="anatomy-code">
+            <code>
+              <span class="anat anat-selector">h1</span>
+              <span class="anat anat-bracket-css"> &#123;</span><br/>
+              &nbsp;&nbsp;<span class="anat anat-prop">color</span><span class="anat">: </span><span class="anat anat-css-val">#ff6b35</span><span class="anat">;</span><br/>
+              &nbsp;&nbsp;<span class="anat anat-prop">font-size</span><span class="anat">: </span><span class="anat anat-css-val">2rem</span><span class="anat">;</span><br/>
+              <span class="anat anat-bracket-css">&#125;</span>
+            </code>
+          </div>
+          <ul class="anatomy-legend">
+            <li><span class="legend-dot" style="background:var(--clr-selector)"></span> Seletor (qual elemento
+              estilizar)</li>
+            <li><span class="legend-dot" style="background:var(--clr-prop)"></span> Propriedade (o que mudar)</li>
+            <li><span class="legend-dot" style="background:var(--clr-css-val)"></span> Valor Estilizado(tamanho, cor,
+              etc.)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seletores -->
+    <section class="content-section" aria-labelledby="seletores">
+      <div class="container">
+        <h2 id="seletores">Tipos de Seletores</h2>
+        <p class="section-intro">Os seletores determinam quais elementos recebem um estilo:</p>
+
+        <div class="tags-grid">
+
+          <article class="tag-card tag-card--css" id="card-elemento" role="article">
+            <header><a class="card-link" href="#card-elemento"><code class="tag-name">elemento</code></a></header>
+            <p>Seleciona pela tag HTML. Ex: <code>p &#123; color: red &#125;</code> estiliza todos os parágrafos.</p>
+          </article>
+
+          <article class="tag-card tag-card--css" id="card-classe" role="article">
+            <header><a class="card-link" href="#card-classe"><code class="tag-name">.classe</code></a></header>
+            <p>Seleciona pelo atributo <code>class</code>. Pode ser reutilizado em múltiplos elementos.</p>
+          </article>
+
+          <article class="tag-card tag-card--css" id="card-id" role="article">
+            <header><a class="card-link" href="#card-id"><code class="tag-name">#id</code></a></header>
+            <p>Seleciona pelo atributo <code>id</code>. Deve ser único por página, alta especificidade.</p>
+          </article>
+
+          <article class="tag-card tag-card--css" id="card-pai-filho" role="article">
+            <header><a class="card-link" href="#card-pai-filho"><code class="tag-name">pai &gt; filho</code></a></header>
+            <p>Seleciona elementos filhos diretos. Permite estilizar com base na hierarquia do HTML.</p>
+          </article>
+
+          <article class="tag-card tag-card--css" id="card-hover" role="article">
+            <header><a class="card-link" href="#card-hover"><code class="tag-name">:hover</code></a></header>
+            <p>Pseudo-classe que dispara quando o mouse passa sobre o elemento — ideal para interações.</p>
+          </article>
+
+          <article class="tag-card tag-card--css" id="card-media" role="article">
+            <header><a class="card-link" href="#card-media"><code class="tag-name">@media</code></a></header>
+            <p>At-rule para responsividade. Aplica estilos diferentes conforme o tamanho da tela.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Box Model -->
+    <section class="content-section content-section--alt" aria-labelledby="box-model" tabindex="0">
+      <div class="container">
+        <h2 id="box-model">Box Model</h2>
+        <p class="section-intro">
+          Todo elemento HTML é tratado como uma caixa com quatro camadas:
+        </p>
+
+        <div class="box-model-diagram" aria-label="Diagrama do CSS Box Model">
+          <div class="bm-margin">
+            <span class="bm-label">margin</span>
+            <div class="bm-border">
+              <span class="bm-label">border</span>
+              <div class="bm-padding">
+                <span class="bm-label">padding</span>
+                <div class="bm-content">
+                  <span>conteúdo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="box-model-list">
+          <li><strong>Content</strong> — o conteúdo real (texto, imagem).</li>
+          <li><strong>Padding</strong> — espaço interno entre o conteúdo e a borda.</li>
+          <li><strong>Border</strong> — a borda ao redor do elemento.</li>
+          <li><strong>Margin</strong> — espaço externo que separa o elemento dos vizinhos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Flexbox -->
+    <section class="content-section" aria-labelledby="flexbox">
+      <div class="container">
+        <h2 id="flexbox">Flexbox</h2>
+        <p class="section-intro">O Flexbox organiza elementos em uma linha ou coluna com total controle de alinhamento:
+        </p>
+
+        <div class="tags-grid">
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">display: flex</code></header>
+            <p>Ativa o contexto Flexbox no elemento pai. Os filhos diretos tornam-se <em>flex items</em>.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">flex-direction</code></header>
+            <p>Define o eixo principal: <code>row</code> (horizontal) ou <code>column</code> (vertical).</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">justify-content</code></header>
+            <p>Alinha os itens no eixo principal. Ex: <code>center</code>, <code>space-between</code>.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">align-items</code></header>
+            <p>Alinha os itens no eixo cruzado (perpendicular). Ex: <code>center</code>, <code>stretch</code>.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">flex-wrap</code></header>
+            <p>Permite que os itens quebrem para a próxima linha quando não há espaço suficiente.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">gap</code></header>
+            <p>Define o espaçamento entre os itens flex sem precisar usar margin.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Layout -->
+    <section class="content-section content-section--alt" aria-labelledby="grid">
+      <div class="container">
+        <h2 id="grid">Grid Layout</h2>
+        <p class="section-intro">O Grid cria layouts bidimensionais — linhas e colunas ao mesmo tempo:</p>
+
+        <div class="tags-grid">
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">display: grid</code></header>
+            <p>Ativa o contexto Grid no elemento pai. Os filhos são posicionados nas células da grade.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">grid-template-columns</code></header>
+            <p>Define o número e tamanho das colunas. Ex: <code>repeat(3, 1fr)</code> cria 3 colunas iguais.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">grid-template-rows</code></header>
+            <p>Define o número e altura das linhas. Pode usar valores fixos, <code>fr</code> ou <code>auto</code>.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">grid-column / grid-row</code></header>
+            <p>Faz um item ocupar múltiplas colunas ou linhas. Ex: <code>grid-column: 1 / 3</code>.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">gap</code></header>
+            <p>Define o espaço entre linhas e colunas da grade de forma simplificada.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">place-items</code></header>
+            <p>Atalho para <code>align-items</code> e <code>justify-items</code> ao mesmo tempo.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Animações -->
+    <section class="content-section" aria-labelledby="animacoes">
+      <div class="container">
+        <h2 id="animacoes">Animações</h2>
+        <p class="section-intro">CSS permite criar movimentos e transições sem nenhuma linha de JavaScript:</p>
+
+        <div class="tags-grid">
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">transition</code></header>
+            <p>Suaviza a mudança entre dois estados. Ex: <code>transition: color 0.3s ease</code> em um hover.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">@keyframes</code></header>
+            <p>Define os fotogramas de uma animação, descrevendo o estado inicial, intermediário e final.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">animation</code></header>
+            <p>Aplica um <code>@keyframes</code> ao elemento. Controla duração, repetição e timing.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">transform</code></header>
+            <p>Modifica forma ou posição visualmente. Ex: <code>scale()</code>, <code>rotate()</code>,
+              <code>translateX()</code>.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">animation-delay</code></header>
+            <p>Aguarda um tempo antes de iniciar a animação — útil para efeitos em cascata.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">animation-fill-mode</code></header>
+            <p><code>forwards</code> mantém o estado final da animação após ela terminar.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Medidas: Fixas vs Relativas -->
+    <section class="content-section" aria-labelledby="medidas">
+      <div class="container">
+        <h2 id="medidas">Medidas: Fixas vs Relativas</h2>
+        <p class="section-intro">Escolher a unidade correta afeta responsividade, acessibilidade e manutenção do código:</p>
+
+        <div class="tags-grid">
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">px (pixel)</code></header>
+            <p><strong>Fixo.</strong> Não escala com o zoom ou preferências do usuário. Útil para bordas e detalhes precisos, mas evitar em fontes.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">rem (root em)</code></header>
+            <p><strong>Relativo.</strong> Baseado no tamanho da fonte do elemento <code>&lt;html&gt;</code>. Melhor opção para layouts e tipografia responsivos.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">em (element em)</code></header>
+            <p><strong>Relativo.</strong> Baseado no tamanho da fonte do elemento pai. Útil para componentes reutilizáveis com espaçamento proporcional.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">% (percentual)</code></header>
+            <p><strong>Relativo.</strong> Baseado no elemento pai. Perfeito para larguras fluidas em layouts responsivos.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">vh / vw (viewport)</code></header>
+            <p><strong>Relativo.</strong> Baseado no tamanho da janela (altura/largura). Ótimo para seções fullscreen e heróis.</p>
+          </article>
+
+          <article class="tag-card tag-card--css">
+            <header><code class="tag-name">clamp()</code></header>
+            <p><strong>Fluido.</strong> Define mín, preferido e máx. Ex: <code>clamp(1rem, 5vw, 3rem)</code> — tipografia responsiva sem @media.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile First -->
+    <section class="content-section content-section--alt" aria-labelledby="mobile-first" tabindex="0">
+      <div class="container content-grid">
+        <div class="content-text">
+          <h2 id="mobile-first">Mobile First</h2>
+          <p>
+            Mobile First é uma abordagem em que você escreve os estilos base para telas <strong>pequenas</strong>
+            e usa <code>@media</code> para adicionar complexidade em telas maiores.
+          </p>
+          <p>
+            Com <code>min-width</code> como ponto de partida, o CSS cresce progressivamente,
+            resultando em código mais limpo, performático e acessível em qualquer dispositivo.
+          </p>
+        </div>
+        <aside class="content-aside" aria-label="Dica sobre Mobile First">
+          <div class="aside-box aside-box--css">
+            <p><strong>Dica:</strong> Comece sempre pelo estilo mobile, sem <code>@media</code>.
+              Só envolva em breakpoints o que precisa <em>mudar</em> em telas maiores — nunca o contrário.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CTA para HTML -->
+    <section class="cta-section cta-section--css" aria-label="Próximo passo">
+      <div class="container cta-inner">
+        <h2>Ainda não viu o HTML?</h2>
+        <p>O CSS precisa de uma estrutura para estilizar. Conheça a base de tudo.</p>
+        <a href="sobreHtml.html" class="btn btn-primary">Aprender HTML →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">
+        <span class="logo-bracket">&lt;</span>DevLearn<span class="logo-bracket">/&gt;</span>
+      </p>
+      <nav aria-label="Links do rodapé">
+        <ul class="footer-nav">
+          <li><a href="../Index.html">Home</a></li>
+          <li><a href="sobreHtml.html">HTML</a></li>
+          <li><a href="sobreCss.html">CSS</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Todos os direitos reservados. Feito de <code>Dev</code> para <code>Dev</code></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

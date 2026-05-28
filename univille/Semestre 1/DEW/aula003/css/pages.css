@@ -1,0 +1,461 @@
+/* ---------- SYNTAX COLORS (usados nos títulos das páginas) ---------- */
+.c-tag {
+  color: var(--clr-html);
+}
+
+.c-brace {
+  color: var(--clr-css);
+}
+
+/* ---------- PAGE HERO ---------- */
+.page-hero {
+  padding-block: 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(255, 107, 53, .12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.page-hero--css::after {
+  background: radial-gradient(circle at 80% 50%, rgba(167, 139, 250, .15) 0%, transparent 60%);
+}
+
+.page-hero h1 {
+  margin-block: .5rem 1rem;
+}
+
+.page-hero-desc {
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+/* ---------- CONTENT SECTIONS ---------- */
+.content-section {
+  padding-block: 5rem;
+}
+
+.content-section--alt {
+  background: var(--clr-surface);
+}
+
+/* Mobile-first: coluna única é o padrão base */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Em telas maiores, expande para layout de duas colunas */
+@media (min-width: 769px) {
+  .content-grid {
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+  }
+}
+
+.content-text h2 {
+  margin-bottom: 1.25rem;
+}
+
+.content-text p+p {
+  margin-top: .75rem;
+}
+
+.content-text strong {
+  color: var(--clr-text);
+}
+
+.content-text em {
+  color: var(--clr-html);
+  font-style: normal;
+}
+
+.section-intro {
+  color: var(--clr-muted);
+  margin-block: .5rem 2rem;
+}
+
+/* aside */
+.aside-box {
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  border-left: 4px solid var(--clr-html);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.aside-box:focus-within {
+  border-left-color: var(--clr-html);
+  box-shadow: 0 4px 12px rgba(255,107,53,0.12);
+}
+
+.aside-box--css {
+  border-left-color: var(--clr-css);
+}
+
+.aside-box--css:focus-within {
+  border-left-color: var(--clr-css);
+  box-shadow: 0 4px 12px rgba(167,139,250,0.12);
+}
+
+.aside-box p {
+  font-size: .9rem;
+}
+
+.aside-box strong {
+  color: var(--clr-text);
+}
+
+/* ---------- ANATOMY DIAGRAM ---------- */
+.anatomy-diagram {
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.anatomy-code {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  line-height: 2;
+  background: var(--clr-bg);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-border);
+}
+
+.anatomy-code code {
+  background: none;
+  padding: 0;
+}
+
+.anat {
+  display: inline;
+}
+
+.anat-bracket {
+  color: var(--clr-html);
+}
+
+.anat-tag {
+  color: var(--clr-html);
+}
+
+.anat-attr {
+  color: var(--clr-attr);
+}
+
+.anat-eq {
+  color: var(--clr-muted);
+}
+
+.anat-val {
+  color: var(--clr-str);
+}
+
+.anat-text {
+  color: var(--clr-text);
+}
+
+/* CSS anatomy */
+.anat-selector {
+  color: var(--clr-selector);
+}
+
+.anat-bracket-css {
+  color: var(--clr-muted);
+}
+
+.anat-prop {
+  color: var(--clr-prop);
+}
+
+.anat-css-val {
+  color: var(--clr-css-val);
+}
+
+.anatomy-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1.5rem;
+}
+
+.anatomy-legend li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--clr-muted);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ---------- TAGS GRID ---------- */
+.tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gap);
+  margin-top: 2rem;
+}
+
+.tag-card {
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.tag-card:hover {
+  border-color: var(--clr-html);
+  transform: translateY(-2px);
+}
+
+.tag-card:focus-within {
+  border-color: var(--clr-html);
+  box-shadow: 0 8px 24px rgba(255,107,53,0.12);
+}
+
+.tag-card--css:hover {
+  border-color: var(--clr-css);
+}
+
+.tag-card--css:focus-within {
+  border-color: var(--clr-css);
+  box-shadow: 0 8px 24px rgba(167,139,250,0.12);
+}
+
+.tag-name {
+  font-family: var(--font-mono);
+  font-size: .95rem;
+  color: var(--clr-html);
+  background: none;
+  padding: 0;
+}
+
+.tag-card--css .tag-name {
+  color: var(--clr-css);
+}
+
+/* ---------- SEMANTIC LAYOUT DIAGRAM ---------- */
+.semantic-layout {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  max-width: 600px;
+  margin: 2rem auto 0;
+}
+
+.sem-box {
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--clr-html);
+  background: var(--clr-surface2);
+  transition: border-color .2s;
+}
+
+.sem-box code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.sem-box:hover {
+  border-color: var(--clr-html);
+}
+
+.sem-header {
+  background: rgba(255, 107, 53, .08);
+}
+
+.sem-nav {
+  background: rgba(255, 107, 53, .05);
+}
+
+.sem-footer {
+  background: rgba(255, 107, 53, .08);
+}
+
+.sem-main {
+  background: rgba(56, 189, 248, .05);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1;
+}
+
+.sem-main code {
+  color: var(--clr-accent);
+}
+
+.sem-article {
+  background: rgba(56, 189, 248, .07);
+  color: var(--clr-accent);
+  font-size: .75rem;
+}
+
+.sem-section {
+  background: rgba(56, 189, 248, .07);
+  color: var(--clr-accent);
+  font-size: .75rem;
+}
+
+.sem-aside {
+  background: rgba(167, 139, 250, .07);
+  border-color: var(--clr-css);
+  color: var(--clr-css);
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.sem-aside code {
+  color: var(--clr-css);
+}
+
+.sem-body-row {
+  display: flex;
+  gap: .5rem;
+}
+
+/* ---------- BOX MODEL DIAGRAM ---------- */
+.box-model-diagram {
+  margin: 2rem auto 1.5rem;
+  max-width: 480px;
+}
+
+.bm-margin {
+  background: rgba(248, 113, 113, .1);
+  border: 2px dashed rgba(248, 113, 113, .5);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.bm-border {
+  background: rgba(251, 191, 36, .08);
+  border: 2px solid rgba(251, 191, 36, .5);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  position: relative;
+}
+
+.bm-padding {
+  background: rgba(52, 211, 153, .08);
+  border: 2px dashed rgba(52, 211, 153, .5);
+  border-radius: 6px;
+  padding: 1rem;
+  position: relative;
+}
+
+.bm-content {
+  background: var(--clr-css);
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: #fff;
+}
+
+.bm-label {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  color: var(--clr-muted);
+  position: absolute;
+  top: 0px;
+  left: 8px;
+}
+
+.box-model-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.box-model-list li {
+  font-size: .9rem;
+  color: var(--clr-muted);
+  padding: .5rem .75rem;
+  background: var(--clr-surface2);
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-border);
+}
+
+.box-model-list strong {
+  color: var(--clr-text);
+}
+
+/* ---------- CTA SECTION ---------- */
+.cta-section {
+  padding-block: 5rem;
+  background: linear-gradient(135deg, rgba(255, 107, 53, .12) 0%, transparent 60%);
+  border-top: 1px solid var(--clr-border);
+}
+
+.cta-section--css {
+  background: linear-gradient(135deg, rgba(167, 139, 250, .12) 0%, transparent 60%);
+}
+
+.cta-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta-inner p {
+  max-width: 480px;
+}
+
+/* ---------- RESPONSIVO PÁGINAS INTERNAS ---------- */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box-model-list {
+    grid-template-columns: 1fr;
+  }
+
+  .sem-body-row {
+    flex-direction: column;
+  }
+}

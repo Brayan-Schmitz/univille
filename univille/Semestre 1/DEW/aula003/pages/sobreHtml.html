@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML — DevLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+
+<body class="page-html">
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../Index.html" class="logo" aria-label="DevLearn Home">
+        <span class="logo-bracket">&lt;</span>DevLearn<span class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="../Index.html" class="nav-link">Home</a></li>
+          <li><a href="sobreHtml.html" class="nav-link active">HTML</a></li>
+          <li><a href="sobreCss.html" class="nav-link">CSS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- Page hero -->
+    <section class="page-hero page-hero--html" aria-labelledby="page-title">
+      <div class="container">
+        <p class="hero-eyebrow">Tecnologia #1</p>
+        <h1 id="page-title" tabindex="-1"><span class="c-tag">&lt;</span>HTML<span class="c-tag">/&gt;</span></h1>
+        <p class="page-hero-desc">
+          HyperText Markup Language — a linguagem que dá estrutura e significado a toda página web.
+        </p>
+      </div>
+    </section>
+
+    <!-- Anatomia de uma tag -->
+    <section class="content-section content-section--alt" aria-labelledby="anatomia" tabindex="0">
+      <div class="container">
+        <h2 id="anatomia">Anatomia de uma Tag</h2>
+        <p class="section-intro">Todo elemento HTML segue a mesma estrutura básica:</p>
+
+        <div class="anatomy-diagram" aria-label="Diagrama de anatomia de uma tag HTML">
+          <div class="anatomy-code">
+            <code>
+              <span class="anat anat-bracket">&lt;</span><span class="anat anat-tag">p</span>
+              <span class="anat anat-attr"> class</span><span class="anat anat-eq">=</span><span class="anat anat-val">"destaque"</span><span class="anat anat-bracket">&gt;</span>
+              <span class="anat anat-text">Conteúdo aqui</span>
+              <span class="anat anat-bracket">&lt;/</span><span class="anat anat-tag">p</span><span class="anat anat-bracket">&gt;</span>
+            </code>
+          </div>
+          <ul class="anatomy-legend">
+            <li><span class="legend-dot" style="background:var(--clr-tag)"></span> Tag (nome do elemento)</li>
+            <li><span class="legend-dot" style="background:var(--clr-attr)"></span> Atributo</li>
+            <li><span class="legend-dot" style="background:var(--clr-val)"></span> Valor do atributo</li>
+            <li><span class="legend-dot" style="background:var(--clr-text)"></span> Conteúdo textual</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tags essenciais -->
+    <section class="content-section" aria-labelledby="tags-essenciais">
+      <div class="container">
+        <h2 id="tags-essenciais">Tags Essenciais</h2>
+        <p class="section-intro">Conheça as tags mais usadas no dia a dia:</p>
+
+        <div class="tags-grid">
+
+          <article class="tag-card" id="card-titulos" role="article">
+            <header><a class="card-link" href="#card-titulos"><code class="tag-name">&lt;h1&gt; … &lt;h6&gt;</code></a></header>
+            <p>Títulos hierárquicos. <code>&lt;h1&gt;</code> é o mais importante e deve aparecer uma vez por página.</p>
+          </article>
+
+          <article class="tag-card" id="card-paragrafo" role="article">
+            <header><a class="card-link" href="#card-paragrafo"><code class="tag-name">&lt;p&gt;</code></a></header>
+            <p>Parágrafo de texto. O bloco mais comum para conteúdo textual em uma página.</p>
+          </article>
+
+          <article class="tag-card" id="card-ancora" role="article">
+            <header><a class="card-link" href="#card-ancora"><code class="tag-name">&lt;a&gt;</code></a></header>
+            <p>Âncora/link. Com o atributo <code>href</code>, cria hiperlinks para outras páginas ou recursos.</p>
+          </article>
+
+          <article class="tag-card" id="card-img" role="article">
+            <header><a class="card-link" href="#card-img"><code class="tag-name">&lt;img&gt;</code></a></header>
+            <p>Imagem. Usa <code>src</code> para o caminho e <code>alt</code> para descrição acessível.</p>
+          </article>
+
+          <article class="tag-card" id="card-listas" role="article">
+            <header><a class="card-link" href="#card-listas"><code class="tag-name">&lt;ul&gt; / &lt;ol&gt;</code></a></header>
+            <p>Listas não-ordenadas e ordenadas. Cada item é envolto pela tag <code>&lt;li&gt;</code>.</p>
+          </article>
+
+          <article class="tag-card" id="card-div-span" role="article">
+            <header><a class="card-link" href="#card-div-span"><code class="tag-name">&lt;div&gt; / &lt;span&gt;</code></a></header>
+            <p>Contêineres genéricos. <code>&lt;div&gt;</code> é bloco, <code>&lt;span&gt;</code> é inline.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Tags semânticas -->
+    <section class="content-section content-section--alt" aria-labelledby="semantica" tabindex="0">
+      <div class="container">
+        <h2 id="semantica">Tags Semânticas</h2>
+        <p class="section-intro">
+          HTML5 introduziu tags com significado próprio, que deixam o código mais legível para humanos e máquinas:
+        </p>
+
+        <div class="semantic-layout" aria-label="Diagrama de layout semântico HTML5">
+          <div class="sem-box sem-header"><code>&lt;header&gt;</code></div>
+          <div class="sem-box sem-nav"><code>&lt;nav&gt;</code></div>
+          <div class="sem-body-row">
+            <div class="sem-box sem-main"><code>&lt;main&gt;</code>
+              <div class="sem-box sem-article"><code>&lt;article&gt;</code></div>
+              <div class="sem-box sem-section"><code>&lt;section&gt;</code></div>
+            </div>
+            <div class="sem-box sem-aside"><code>&lt;aside&gt;</code></div>
+          </div>
+          <div class="sem-box sem-footer"><code>&lt;footer&gt;</code></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="por-que-semantica" tabindex="0">
+      <div class="container content-grid">
+        <div class="content-text">
+          <h2 id="o-que-e">Por que semântica?</h2>
+          <p>
+            A semântica no HTML serve para dar <strong>significado</strong> aos elementos da página. Em vez de usar
+            apenas
+            tags genéricas, como <em>div</em>, utilizamos elementos que descrevem claramente o conteúdo, como
+            <em>header</em>, <em>main</em>, <em>section</em> e <em>footer</em>.
+          </p>
+          <p>
+            Isso torna o código mais organizado, melhora a acessibilidade para leitores de tela e ajuda mecanismos de
+            busca,
+            como o Google, a entenderem melhor a estrutura e a importância de cada parte do site.
+          </p>
+        </div>
+
+        <aside class="content-aside" aria-label="Curiosidade sobre HTML">
+          <div class="aside-box">
+            <p><strong>Você sabia?</strong> Sites que utilizam HTML semântico costumam ter melhor desempenho em SEO e
+              oferecem uma experiência mais acessível para todos os usuários.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CTA para CSS -->
+    <section class="cta-section" aria-label="Próximo passo">
+      <div class="container cta-inner">
+        <h2>Pronto para o próximo passo?</h2>
+        <p>Agora que você conhece a estrutura, aprenda a estilizar tudo com CSS.</p>
+        <a href="sobreCss.html" class="btn btn-accent">Aprender CSS →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">
+        <span class="logo-bracket">&lt;</span>DevLearn<span class="logo-bracket">/&gt;</span>
+      </p>
+      <nav aria-label="Links do rodapé">
+        <ul class="footer-nav">
+          <li><a href="../Index.html">Home</a></li>
+          <li><a href="sobreHtml.html">HTML</a></li>
+          <li><a href="sobreCss.html">CSS</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Todos os direitos reservados. Feito de <code>Dev</code> para <code>Dev</code></p>
+    </div>
+  </footer>
+</body>
+</html>
