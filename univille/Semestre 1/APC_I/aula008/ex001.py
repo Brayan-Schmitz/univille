@@ -9,5 +9,5 @@ if num1 < num2:
     for i in range(num1+1, num2):
         print(i)
 else:
-    for i in range(num1+1, num2, -1):
+    for i in range(num1-1, num2, -1):
         print(i)
