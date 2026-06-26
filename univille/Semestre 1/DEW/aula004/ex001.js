@@ -7,11 +7,7 @@ class Produto {
   }
 
   nivelEstoque() {
-    if (this.estoque < 5) {
-      return "baixo";
-    }
-
-    return "adequado";
+    return this.estoque < 5 ? "baixo" : "adequado";
   }
 
   saida() {
