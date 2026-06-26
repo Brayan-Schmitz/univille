@@ -19,7 +19,5 @@ const totalGastos = calcularTotal(gastos);
 console.log(`Total: R$ ${totalGastos}`);
 
 console.log(
-  totalGastos > 2000
-    ? "Limite ultrapassado"
-    : "Gastos dentro do limite",
+  totalGastos > 2000 ? "Limite ultrapassado" : "Gastos dentro do limite",
 );
