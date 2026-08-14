@@ -2,8 +2,6 @@
 # SISTEMA DE GESTÃO DE ESTOQUE E COMPRAS
 # ==========================================
 
-# Base de dados (Escopo global do script)
-
 estoque = [
     {"id": 1, "nome": "Notebook", "preco": 3500.0, "qtd": 5},
     {"id": 2, "nome": "Mouse", "preco": 80.0, "qtd": 15},
@@ -11,8 +9,7 @@ estoque = [
 ]
 
 carrinho = []
-taxa_imposto_padrao = 0.05  # 5% de taxa padrão
-
+taxa_imposto_padrao = 0.05
 executando = True
 
 
@@ -29,7 +26,7 @@ def exibir_menu():
 
 
 # --- Opção 1: Listar Produtos ---
-def listar_produtos():
+def listar_produtos(estoque):
     print("\n--- PRODUTOS DISPONÍVEIS ---")
 
     if not estoque:
@@ -45,16 +42,14 @@ def listar_produtos():
 
 
 # --- Opção 2: Adicionar Produto ao Carrinho ---
-def adicionar_ao_carrinho():
+def adicionar_ao_carrinho(estoque, carrinho):
 
     print("\n--- ADICIONAR AO CARRINHO ---")
     id_busca = input("Digite o ID do produto: ")
 
-    # Validação simples se é número
     if id_busca.isdigit():
         id_busca = int(id_busca)
 
-        # Busca manual no estoque
         produto_encontrado = None
 
         for item in estoque:
@@ -70,12 +65,15 @@ def adicionar_ao_carrinho():
             if qtd_desejada.isdigit():
                 qtd_desejada = int(qtd_desejada)
 
-                if qtd_desejada > 0 and qtd_desejada <= produto_encontrado["qtd"]:
+                if (
+                    qtd_desejada > 0
+                    and qtd_desejada <= produto_encontrado["qtd"]
+                ):
 
-                    # Atualiza estoque e adiciona ao carrinho
+                    # Atualiza estoque
                     produto_encontrado["qtd"] -= qtd_desejada
 
-                    # Verifica se já está no carrinho para somar a quantidade
+                    # Verifica se o produto já está no carrinho
                     no_carrinho = False
 
                     for item_c in carrinho:
@@ -112,58 +110,60 @@ def adicionar_ao_carrinho():
 
 
 # --- Opção 3: Exibir Carrinho e Calcular Total ---
-def exibir_carrinho():
+def exibir_carrinho(carrinho, taxa_padrao=0.05):
 
     print("\n--- SEU CARRINHO ---")
 
     if not carrinho:
         print("O carrinho está vazio.")
+        return
 
-    else:
-        subtotal = 0.0
+    subtotal = 0.0
 
-        for item in carrinho:
-            total_item = item["preco"] * item["qtd"]
-            subtotal += total_item
+    for item in carrinho:
+        total_item = item["preco"] * item["qtd"]
+        subtotal += total_item
 
-            print(
-                f"- {item['nome']} "
-                f"(x{item['qtd']}): R$ {total_item:.2f}"
-            )
-
-        # Pergunta se deseja aplicar taxa customizada
-        # ou usar a padrão (Ideal para parâmetro default)
-        taxa_aplicada = taxa_imposto_padrao
-
-        aplicar_taxa = input(
-            "\nDeseja aplicar taxa de entrega/serviço customizada? (s/N): "
-        ).strip().lower()
-
-        if aplicar_taxa == 's':
-            val_taxa = input(
-                "Digite a taxa decimal (ex: 0.10 para 10%): "
-            )
-
-            try:
-                taxa_aplicada = float(val_taxa)
-
-            except ValueError:
-                print("Valor inválido. Mantendo taxa padrão de 5%.")
-
-        valor_imposto = subtotal * taxa_aplicada
-        total_final = subtotal + valor_imposto
-
-        print("-" * 30)
-        print(f"Subtotal: R$ {subtotal:.2f}")
         print(
-            f"Taxa ({taxa_aplicada * 100:.1f}%): "
-            f"R$ {valor_imposto:.2f}"
+            f"- {item['nome']} "
+            f"(x{item['qtd']}): R$ {total_item:.2f}"
         )
-        print(f"TOTAL FINAL: R$ {total_final:.2f}")
+
+    taxa_aplicada = taxa_padrao
+
+    aplicar_taxa = input(
+        "\nDeseja aplicar taxa de entrega/serviço customizada? (s/N): "
+    ).strip().lower()
+
+    if aplicar_taxa == "s":
+        val_taxa = input(
+            "Digite a taxa decimal (ex: 0.10 para 10%): "
+        )
+
+        try:
+            taxa_aplicada = float(val_taxa)
+
+            if taxa_aplicada < 0:
+                print("Taxa inválida. Mantendo taxa padrão.")
+                taxa_aplicada = taxa_padrao
+
+        except ValueError:
+            print("Valor inválido. Mantendo taxa padrão.")
+
+    valor_imposto = subtotal * taxa_aplicada
+    total_final = subtotal + valor_imposto
+
+    print("-" * 30)
+    print(f"Subtotal: R$ {subtotal:.2f}")
+    print(
+        f"Taxa ({taxa_aplicada * 100:.1f}%): "
+        f"R$ {valor_imposto:.2f}"
+    )
+    print(f"TOTAL FINAL: R$ {total_final:.2f}")
 
 
 # --- Opção 4: Cadastrar Novo Produto ---
-def cadastrar_produto():
+def cadastrar_produto(estoque):
 
     print("\n--- CADASTRO DE PRODUTO ---")
 
@@ -177,7 +177,7 @@ def cadastrar_produto():
 
         if nome_novo and preco_novo > 0 and qtd_nova >= 0:
 
-            # Gerar ID automático
+            # Gera ID automático
             novo_id = 1
 
             if estoque:
@@ -213,16 +213,16 @@ while executando:
     opcao = input("\nEscolha uma opção: ")
 
     if opcao == "1":
-        listar_produtos()
+        listar_produtos(estoque)
 
     elif opcao == "2":
-        adicionar_ao_carrinho()
+        adicionar_ao_carrinho(estoque, carrinho)
 
     elif opcao == "3":
-        exibir_carrinho()
+        exibir_carrinho(carrinho, taxa_imposto_padrao)
 
     elif opcao == "4":
-        cadastrar_produto()
+        cadastrar_produto(estoque)
 
     elif opcao == "0":
         print("\nEncerrando o sistema. Até logo!")
