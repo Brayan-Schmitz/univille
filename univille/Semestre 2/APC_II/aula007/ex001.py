@@ -13,10 +13,11 @@ while True:
         break
 
     if aluno in turma:
-    nova_nota = float(input(f"Digite a nova nota para {aluno}: "))
-    if 0 <= nova_nota <= 10:
-        turma[aluno].append(nova_nota)
-        print(f"Nota {nova_nota} adicionada com sucesso!")
+        nova_nota = float(input(f"Digite a nova nota para {aluno}: "))
+
+        if 0 <= nova_nota <= 10:
+            urma[aluno].append(nova_nota)
+            print(f"Nota {nova_nota} adicionada com sucesso!")
 
         else:
             print("Nota inválida! Digite um valor entre 0 e 10.")
