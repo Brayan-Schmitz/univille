@@ -1,0 +1,8 @@
+--Nome do Cliente, a conta dele, e os valores que ele movimentou
+-- mostrar apenas do Jon
+SELECT Clientes.ClienteNome , Contas.ContaNumero,
+Movimentos.MovimentoValor
+FROM Clientes, Contas, Movimentos
+WHERE Clientes.ClienteCodigo=Contas.ClienteCodigo
+AND Contas.ContaNumero=Movimentos.ContaNumero
+AND Clientes.ClienteNome = 'Jon'
