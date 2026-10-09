@@ -63,3 +63,66 @@ t = [1, 2, 3, 4]
 print(middle(t))
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+'''Exercício 10.4
+Escreva uma função chamada chop que tome uma lista alterando-a para remover o primeiro e o último elementos, e retorne None. Por exemplo:
+
+>>> t = [1, 2, 3, 4]
+>>> chop(t)
+>>> t
+[2, 3]'''
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+def chop(t):
+    del t[0]
+    del t[-1]
+
+
+t = [1, 2, 3, 4]
+chop(t)
+print(t)    
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+'''Exercício 10.5
+Escreva uma função chamada is_sorted que tome uma lista como parâmetro e retorne True se a lista estiver classificada em ordem ascendente, e False se não for o caso. Por exemplo:
+
+>>> is_sorted([1, 2, 2])
+True
+>>> is_sorted(['b', 'a'])
+False'''
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+def is_sorted(t):
+    for i in range(len(t) - 1):
+        if t[i] > t[i + 1]:
+            return False
+    return True
+
+
+print(is_sorted([1, 2, 2]))
+print(is_sorted(['b', 'a']))
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+'''Exercício 10.6
+Duas palavras são anagramas se você puder soletrar uma rearranjando as letras da outra.
+Escreva uma função chamada is_anagram que tome duas strings e retorne True se forem anagramas.'''
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+def is_anagram(a, b):
+    return sorted(a) == sorted(b)
+
+
+print(is_anagram("amor", "roma"))
+print(is_anagram("casa", "saco"))
+sorted() transforma a string em uma lista de caracteres ordenados. Por exemplo:
+
+sorted("amor")
+
+sorted("roma")
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
