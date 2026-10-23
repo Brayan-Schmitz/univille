@@ -1,0 +1,16 @@
+--Exemplo de como
+
+SELECT Clientes.ClienteNome AS Nome,
+       ClienteSobrenome AS Sobrenome
+FROM   Clientes;
+
+--Pesquisa
+
+SELECT Clientes.ClienteNome,
+       ClienteSobrenome,
+       Contas.ContaNumero,
+       Movimentos.MovimentoValor
+FROM   Clientes, Contas, Movimentos
+WHERE  Clientes.ClienteCodigo = Contas.ClienteCodigo
+       AND Contas.ContaNumero = Movimentos.ContaNumero
+ORDER BY MovimentoValor DESC
