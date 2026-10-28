@@ -1,0 +1,9 @@
+SELECT ClienteNome,
+       ClienteSexo,
+       CASE 
+            WHEN ClienteNome LIKE '%a' THEN 'Feminino'
+            WHEN ClienteNome LIKE '%o' THEN 'Masculino' ELSE 'Outros'
+        END AS Sexo
+FROM   Clientes
+WHERE  ClienteNome LIKE '%a'
+       OR ClienteNome LIKE '%o'
