@@ -1,0 +1,14 @@
+SELECT ClienteNome, ClienteRendaAnual,
+CASE
+        WHEN ClienteRendaAnual >= 0 AND ClienteRendaAnual <= 100000 THEN 'Classe Média'
+        WHEN ClienteRendaAnual > 100000 THEN 'Rico'
+    ELSE 'Outros'
+END AS 'Status'
+From Clientes
+
+SELECT ClienteNome, ClienteTelefone FROM   Clientes
+WHERE  ClienteNome IN 
+    (
+        SELECT ClienteNome FROM Clientes
+        WHERE  ClienteEstadoCivil NOT IN ('C', 'V')
+    )
